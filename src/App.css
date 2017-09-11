@@ -1,0 +1,13 @@
+body{
+    background: #000000;
+    color: #ffffff;
+}
+
+.App {
+    text-align: center;
+    padding: 5%;
+}
+
+.App-title {
+    font-size: 26px;
+}
