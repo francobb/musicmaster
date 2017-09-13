@@ -19,7 +19,7 @@ class App extends Component {
         fetch(FETCH_URL, {
             method: 'GET',
             headers: {
-                Authorization: 'Bearer BQBhYbqL9xfYvaQgcgrQHOcO-QCWH0uFePRS6HMcjSNjaDTAvtwupwVi66GZbsBgIJqYQ4U7tvT8lGxXmWLOvNB9WSJJ1n5_4PtBo_ko2icWcjTxm6fmHSaw5GSUFPBsjpfwd77C3w'
+                Authorization: 'Bearer BQCZqL0YSgdW2s2VeBe6jbcf7s2rpr3RkqpSMXLv_lewZRYFXfHo2g6LWsH3WNWDBsm_WNctP3fpEHcOg7UrPgG9ampT5tszaDgeUxcgdzIKGVmEvqT1UlIg_i2mD21iT3D5MhayWw'
             }
         })
         .then(response => response.json())
