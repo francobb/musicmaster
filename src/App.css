@@ -29,6 +29,9 @@ body{
 .profile-info {
     margin-left: 10px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .profile-name {
@@ -38,3 +41,37 @@ body{
 .profile-followers, .profile-genres {
     font-size: 18px;
 }
+
+/* Gallery */
+
+.track{
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.track-img {
+    width: 220px;
+    height: 220px;
+    border: 3px solid #fff;
+    border-radius: 3px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.track-text {
+    background-color: black;
+    color: #fff;
+    width:214px;
+    opacity: 0.75;
+    position: absolute;
+    text-align: center;
+    margin-left: 3px;
+    bottom:0;
+}
+/* track */
