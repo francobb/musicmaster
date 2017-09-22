@@ -5,6 +5,7 @@ class Gallery extends Component {
 
     playTrack(url){
         let audio = new Audio(url);
+        audio.play();
     }
 
 
@@ -26,6 +27,7 @@ class Gallery extends Component {
                                 src={trackImg}
                                 className="track-img"
                                 alt="track"
+                                onClick={() => this.playTrack(track.preview_url)}
                             />
                             <p
                                 className="track-text"
