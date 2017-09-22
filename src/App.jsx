@@ -20,7 +20,7 @@ class App extends Component {
         const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
 
         console.log("FETCH_URL", FETCH_URL);
-        const accessToken = 'BQDkMsc8ypm0dZsQ1sa_BTPdrtEOy0JCea5PAg66iNQPoRddmVkEhha2GrGv84cDlkgnuFeB3bv6vtFMsM8nlJXdhyH-WHUcRyLAXMm7CzRP4KhZ8Yt9D2p1T21JgVrs-aXJ8iDU8QvZBoS6aHMNru_NKJAPrg&refresh_token=AQCWw6Z6hUON-FJyv5MJ24Fp-qaizukoPb0rp4y2AN_mTn-zWh1ngbMJiJSA6Yne05qB-KN4gA7bVfEWRJdUyPCaGuE49_mBmUR0ppOsvWEv_-34zjcE5KmBC-59MICQhus';
+        const accessToken = 'BQADKOCGo9grFjqtyq7bHEQVcKtNgnrt9mZCCaJ3pft4WsF30T0usA_5Demqu7kGZFLOLP6qq0WnYDMPfV8RwdclwDrpNH108vBxNslG4nKSCJCA6ui23QQCHKxmVprJHkjgZmL4ywCm1eWIus810PhvCelpUQ&refresh_token=AQD7rS_qqq-Kg438Mdihv3rJT92qPsToupAHtiJYNUAVeX_exVp5oeORCQyGIjMF48WS-flMe1KtGLCRO8SvX9lrzXNmacCazRLmwUoa7UYsvCsQ8nWD32KtAdW98r8EszA';
         fetch(FETCH_URL, {
             method: 'GET',
             headers: {
