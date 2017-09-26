@@ -14,13 +14,11 @@ class App extends Component {
     }
 
     search() {
-        console.log('this.state', this.state);
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
 
-        console.log("FETCH_URL", FETCH_URL);
-        const accessToken = 'BQADKOCGo9grFjqtyq7bHEQVcKtNgnrt9mZCCaJ3pft4WsF30T0usA_5Demqu7kGZFLOLP6qq0WnYDMPfV8RwdclwDrpNH108vBxNslG4nKSCJCA6ui23QQCHKxmVprJHkjgZmL4ywCm1eWIus810PhvCelpUQ&refresh_token=AQD7rS_qqq-Kg438Mdihv3rJT92qPsToupAHtiJYNUAVeX_exVp5oeORCQyGIjMF48WS-flMe1KtGLCRO8SvX9lrzXNmacCazRLmwUoa7UYsvCsQ8nWD32KtAdW98r8EszA';
+        const accessToken = 'BQAcxS7hobTcUxxm-90igYOfIasXhDeS3077P8XH9DinBU2Hxj8DkUs2XLu0Oq1VmoYH86ZfLatXKXNrLp-RDPxf5w3pLDeLCd4zvqXOrtukLLgMTgyAgFNBWJfD6EFVhCuijlymsI4h7jtEqDlg3upZPM31rQ&refresh_token=AQDAvin4lzI3W9TVqAyVd1X7-mP9d_vKU3wSifE9oqGCXvGIPrM8JIr1SP1SDGXQWM59BskBkgEVGc34J0HfOUtisXhHhchLZMPXaTfKCS4L8ZySj6QZiQeHW9KmJT5mClo`';
         fetch(FETCH_URL, {
             method: 'GET',
             headers: {
@@ -30,7 +28,6 @@ class App extends Component {
         .then(response => response.json())
         .then(json => {
             const artist = json.artists.items[0];
-            console.log('artist', artist);
             this.setState({artist});
 
             FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
@@ -42,11 +39,9 @@ class App extends Component {
             })
             .then(res => res.json())
             .then(json => {
-                console.log(json);
                 const { tracks } = json;
                 this.setState({ tracks })
-            })
-
+            });
         });
     }
 

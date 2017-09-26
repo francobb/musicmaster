@@ -39,7 +39,6 @@ class Gallery extends Component {
     }
 
     render(){
-        console.log('gallery props', this.props);
         const { tracks } = this.props;
 
         return(
@@ -51,11 +50,13 @@ class Gallery extends Component {
                             key={k}
                             className="track"
                         >
+                            //sets img src
                             <img
                                 src={trackImg}
                                 className="track-img"
                                 alt="track"
                             />
+                            //calls onClick
                             <div className="track-play"
                                  onClick={() => this.playTrack(track.preview_url)}
                             >

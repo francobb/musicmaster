@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Profile extends Component {
-    // constructor(props){
-    //     super(props);
-    // }
 
     render(){
-        console.log('this.props', this.props);
-
         let artist = {name: '', followers: {total: ''}, images: [{url: ''}], genres: []};
 
         if (this.props.artist !== null) {
