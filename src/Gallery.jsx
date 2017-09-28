@@ -39,41 +39,54 @@ class Gallery extends Component {
     }
 
     render(){
-        const { tracks } = this.props;
+        let tracks;
+
+        if (this.props.tracks !== null) {
+          tracks  = this.props.tracks;
+        }
 
         return(
             <div>
-                {tracks.map((track, k) => {
-                    const trackImg = track.album.images[0].url;
-                    return(
-                        <div
-                            key={k}
-                            className="track"
-                        >
-                            //sets img src
-                            <img
-                                src={trackImg}
-                                className="track-img"
-                                alt="track"
-                            />
-                            //calls onClick
-                            <div className="track-play"
-                                 onClick={() => this.playTrack(track.preview_url)}
-                            >
-                                <div className="track-play-inner">
-                                    {
-                                        this.state.playingUrl === track.preview_url
-                                        ? <span> | | </span>
-                                        : <span> &#9654; </span>
-                                    }
-                                </div>
-                            </div>
-                            <p className="track-text">
-                                {track.name}
-                            </p>
-                        </div>
-                    )
-                })}
+              {
+                this.props.tracks !== undefined
+                      ?
+                      <div>
+                        { tracks.map((track, k) => {
+                          const trackImg = track.album.images[0].url;
+                          return(
+                              <div
+                                  key={k}
+                                  className="track"
+                              >
+                                  <img
+                                      src={trackImg}
+                                      className="track-img"
+                                      alt="track"
+                                  />
+
+                                  <div className="track-play"
+                                       onClick={() => this.playTrack(track.preview_url)}
+                                  >
+                                      <div className="track-play-inner">
+                                        {
+                                          this.state.playingUrl === track.preview_url
+                                              ? <span> | | </span>
+                                              : <span> &#9654; </span>
+                                        }
+                                      </div>
+                                  </div>
+                                  <p className="track-text">
+                                    {track.name}
+                                  </p>
+                              </div>
+                          )
+                        })}
+                      </div>
+
+                      :
+
+                      <div> </div>
+              }
             </div>
         )
     }

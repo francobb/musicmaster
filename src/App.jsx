@@ -18,7 +18,7 @@ class App extends Component {
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
 
-        const accessToken = 'BQAcxS7hobTcUxxm-90igYOfIasXhDeS3077P8XH9DinBU2Hxj8DkUs2XLu0Oq1VmoYH86ZfLatXKXNrLp-RDPxf5w3pLDeLCd4zvqXOrtukLLgMTgyAgFNBWJfD6EFVhCuijlymsI4h7jtEqDlg3upZPM31rQ&refresh_token=AQDAvin4lzI3W9TVqAyVd1X7-mP9d_vKU3wSifE9oqGCXvGIPrM8JIr1SP1SDGXQWM59BskBkgEVGc34J0HfOUtisXhHhchLZMPXaTfKCS4L8ZySj6QZiQeHW9KmJT5mClo`';
+        const accessToken = 'BQBJAeWUODhe6oti6VeehNKruSu4r5J08VIRq0S9LJAsmmzgr1R9S7Ty79YCq_2G4iz2nCJO_f7U8MExKk7cw75qoLyCavYmcpcYS9U1-MztXH1KH4pXBmA-kD1oOEqVyiLs5X-Cz_rpEF2rUUaNFk-QBYvaNQ&refresh_token=AQDVSXY7QAnYdy5y3m1NW_dDrODKQyQk_vYeJruhXo9Ak6dITd-3d3OO3WxNFZLcZDLHy4g7ll14wq9cGRkFy1lWDRc0T383r3bznV6dE0TcKCivwnph0gNKVpH6-VOjxi8';
         fetch(FETCH_URL, {
             method: 'GET',
             headers: {
@@ -28,10 +28,11 @@ class App extends Component {
         .then(response => response.json())
         .then(json => {
             const artist = json.artists.items[0];
-            this.setState({artist});
+          this.setState({artist});
 
             FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
-            fetch(FETCH_URL, {
+
+          fetch(FETCH_URL, {
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${accessToken}`
@@ -39,8 +40,11 @@ class App extends Component {
             })
             .then(res => res.json())
             .then(json => {
-                const { tracks } = json;
-                this.setState({ tracks })
+
+              const { tracks } = json;
+                this.setState({ tracks });
+
+
             });
         });
     }
@@ -52,6 +56,7 @@ class App extends Component {
               <FormGroup>
                   <InputGroup>
                       <FormControl
+                          className="form-control-element"
                           type="text"
                           placeholder="Search for an Artist"
                           value={this.state.query}
@@ -62,7 +67,7 @@ class App extends Component {
                               }
                           }}
                       />
-                      <InputGroup.Addon onClick={() => {this.search()}}>
+                      <InputGroup.Addon className='input-group-addon' onClick={() => {this.search()}}>
                           <Glyphicon glyph="search"> </Glyphicon>
                       </InputGroup.Addon>
                   </InputGroup>

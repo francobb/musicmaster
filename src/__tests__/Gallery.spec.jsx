@@ -121,7 +121,7 @@ describe('Gallery Unit Tests', () => {
         });
 
         it('should have updated default props to include tracks', () => {
-            console.log(app.instance().props);
+            // console.log(app.instance().props);
             expect(app.instance().props.tracks).to.eql(tracks.tracks);
         });
 
